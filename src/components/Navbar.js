@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import {BsSearch} from 'react-icons/bs'
-import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
+import {AiOutlineMenu, AiOutlineClose, AiOutlineHome, AiOutlineShop, AiOutlineContacts} from 'react-icons/ai'
 import {FaFacebookSquare, FaInstagramSquare, FaTwitterSquare, FaWhatsappSquare} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
@@ -34,9 +34,9 @@ const handleNav = () => {
             </div>
             <div className={`w-full bg-gray-800/20 absolute md:hidden top-0 left-0 flex flex-col px-4 py-10 ${nav ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-500 ease-in-out`}>
                 <h1 className='text-2xl font-bold border-b-[2px] text-[var(--primary)]'>WheelsOnline</h1>
-                <NavLink to="/" onClick={handleNav} className="mob-links">Home</NavLink>
-                <NavLink to="shop" onClick={handleNav} className="mob-links">Shop</NavLink>
-                <NavLink to="contact" onClick={handleNav} className="mob-links">Contact</NavLink> 
+                    <NavLink to="/" onClick={handleNav} className="mob-links spread-nav">Home<AiOutlineHome className='rel-icons'/></NavLink>
+                    <NavLink to="shop" onClick={handleNav} className="mob-links spread-nav">Shop<AiOutlineShop className='rel-icons'/></NavLink>
+                    <NavLink to="contact" onClick={handleNav} className="mob-links spread-nav">Contact<AiOutlineContacts className='rel-icons'/></NavLink> 
                 <div className='flex justify-evenly mt-8 '>
                     <div>
                         <Link to="https://coolors.co/palettes/trending" target="_blank" onClick={handleNav}><FaFacebookSquare size={40} className="text-blue-900 icons"/></Link>
