@@ -46,9 +46,9 @@ useEffect(() => {
             
             {/* mobile menu */}
             <div onClick={handleNav} className='block md:hidden z-10 hover:cursor-pointer text-[var(--default)]'>
-                {nav? <AiOutlineClose /> : <AiOutlineMenu className='text-black'/>}
+                {nav? <AiOutlineClose /> : <AiOutlineMenu className={`text-black ${scroll? "text-white": ''}`}/>}
             </div>
-            <div className={`w-full h-[60vh] bg-black absolute md:hidden top-0 left-0 flex flex-col px-4 py-10 ${nav ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-500 ease-in-out`}>
+            <div className={`w-full h-screen bg-black absolute md:hidden top-0 left-0 flex flex-col px-4 py-10 ${nav ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-500 ease-in-out`}>
                 <h1 className='text-2xl font-bold border-b-[2px] text-[var(--primary)]'>WheelsOnline</h1>
                     <NavLink to="/" onClick={handleNav} className="mob-links spread-nav">Home<AiOutlineHome className='rel-icons'/></NavLink>
                     <NavLink to="shop" onClick={handleNav} className="mob-links spread-nav">Shop<AiOutlineShop className='rel-icons'/></NavLink>
