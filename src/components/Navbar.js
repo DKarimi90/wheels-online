@@ -33,11 +33,10 @@ useEffect(() => {
     <div className={`w-full h-28 fixed z-10 ${scroll? "bg-black text-[var(--default)]": ''}`}>
         <div className='w-full h-full max-w-[1200px] mx-auto px-4 flex justify-between items-center'>
             <div>
-                <h1 className={`${logo? 'hidden': 'block'} text-2xl font-bold border-b-[2px]`}><Link to="/" onClick={() => window.scrollTo(0, 0)}>WheelsOnline</Link></h1>
+                <h1 className={`${logo? 'hidden': 'block'} text-2xl font-bold border-b-[2px] hover:text-[var(--primary)] hover:border-[var(--primary)] border-black`}><Link to="/" onClick={() => window.scrollTo(0, 0)}>WheelsOnline</Link></h1>
             </div>
             <div className='hidden md:flex items-center'>
                 <NavLink to="/" className="links">Home</NavLink>
-                {/* <NavLink to="shop" className="links">Shop</NavLink> */}
                 <NavLink to="contact" className="links">Contact</NavLink> 
                 <div className='ml-10'>
                     <BsSearch />

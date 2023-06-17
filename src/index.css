@@ -21,7 +21,7 @@
     @apply font-[Montserrat]
   }
   .links {
-    @apply px-2 text-xl
+    @apply px-2 text-xl hover:text-[var(--primary)]
   }
   .mob-links {
     @apply px-2 text-xl py-4 border-b text-[var(--primary)]
@@ -33,7 +33,7 @@
     @apply text-black
   }
   .button {
-    @apply bg-gradient-to-r from-[var(--primary)] to-[var(--primary2)] text-[var(--default)] px-6 py-2 rounded-md text-2xl
+    @apply bg-gradient-to-r from-[var(--primary)] to-[var(--primary2)] text-[var(--default)] px-6 py-2 rounded-md text-2xl hover:bg-gradient-to-r hover:from-[var(--primary2)] hover:to-[var(--primary)] hover:text-gray-300
   }
   .spread-nav {
     @apply flex justify-between

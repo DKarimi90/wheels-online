@@ -20,7 +20,7 @@ const Purchase = () => {
                     <button className='button mt-6'>Submit</button>
                 </div> 
             </form>
-            <button className='button w-full mt-6'><Link to="shop">Back</Link></button>
+            <button className='button w-full mt-6'><Link to="/shop">Back</Link></button>
         </div>
     </div>
 
