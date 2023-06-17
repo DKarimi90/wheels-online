@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import {BsSearch} from 'react-icons/bs'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import {FaFacebookSquare, FaInstagramSquare, FaTwitterSquare, FaWhatsappSquare} from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 
 const Navbar = () => {
@@ -28,19 +29,30 @@ const handleNav = () => {
             </div>
             
             {/* mobile menu */}
-            <div onClick={handleNav} className='block md:hidden z-10'>
+            <div onClick={handleNav} className='block md:hidden z-10 hover:cursor-pointer'>
                 {nav? <AiOutlineClose /> : <AiOutlineMenu />}
             </div>
-            <div className={`w-full h-full bg-slate-500 absolute md:hidden top-0 left-0 flex flex-col px-4 py-10 ${nav ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-500 ease-in-out`}>
-                <h1 className='text-2xl font-bold border-b-[2px]'>WheelsOnline</h1>
+            <div className={`w-full bg-gray-800/20 absolute md:hidden top-0 left-0 flex flex-col px-4 py-10 ${nav ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-500 ease-in-out`}>
+                <h1 className='text-2xl font-bold border-b-[2px] text-[var(--primary)]'>WheelsOnline</h1>
                 <NavLink to="/" onClick={handleNav} className="mob-links">Home</NavLink>
                 <NavLink to="shop" onClick={handleNav} className="mob-links">Shop</NavLink>
                 <NavLink to="contact" onClick={handleNav} className="mob-links">Contact</NavLink> 
-                <div className='flex justify-evenly mt-8'>
-                  <FaFacebookSquare size={30}/> 
-                  <FaInstagramSquare size={30}/>
-                  <FaTwitterSquare size={30}/>
-                  <FaWhatsappSquare size={30}/> 
+                <div className='flex justify-evenly mt-8 '>
+                    <div>
+                        <Link to="https://coolors.co/palettes/trending" target="_blank" onClick={handleNav}><FaFacebookSquare size={40} className="text-blue-900 icons"/></Link>
+                    </div>
+                    <div className="bg-gradient-to-tr from-blue-500 to-purple-500 inline-block  rounded">
+                        <Link><FaInstagramSquare size={40} className="text-white icons" /></Link>
+                    </div>
+                    <div>
+                        <Link><FaTwitterSquare size={40} className="text-blue-600 icons"/></Link>
+                    </div>
+                    <div>
+                        <Link><FaWhatsappSquare size={40} className="text-green-700 icons"/></Link>
+                    </div>
+                </div>
+                <div className='flex justify-center mt-9'>
+                    <Link><button className='button'>Discover</button></Link>
                 </div>
             </div> 
         </div>
