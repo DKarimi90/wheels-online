@@ -14,7 +14,7 @@ const Home = () => {
           <div className='text-[#ffffff]'>
             <p className='text-xl md:text-2xl lg:3xl'>Proudly Serving for 20 Years with Precision and Excellence</p>
           </div>
-            <button className='button mt-8 '><Link>Discover</Link></button>
+            <button className='button mt-8 '><Link to="/shop">Discover</Link></button>
           </div>
         <div className='h-4'>
       </div>

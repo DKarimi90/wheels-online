@@ -1,9 +1,162 @@
-import React from 'react'
+
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { BsChevronCompactRight, BsChevronCompactLeft, BsClock } from 'react-icons/bs';
+import {CiLocationOn} from 'react-icons/ci'
+import {GrView} from 'react-icons/gr'
+import {GiOpenPalm, GiGearStickPattern, GiClockwork} from 'react-icons/gi'
+
 
 const Details = () => {
-  return (
-    <div>Details</div>
-  )
-}
+  const { id } = useParams();
+  const [car, setCar] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-export default Details
+  useEffect(() => {
+    fetch(`http://localhost:3005/cars/${id}`)
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        setCar(data);
+      });
+  }, [id]);
+
+
+  const prevCar = () => {
+    const newIndex = (currentIndex + car.image_url.length - 1) % car.image_url.length;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextCar = () => {
+    const newIndex = (currentIndex + 1) % car.image_url.length;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNextCar = (index) => {
+    setCurrentIndex(index);
+  };
+
+  return (
+    <div className='w-full h-full grid md:grid-cols-5 bg-gray-100'>
+    <div className='col-span-1'>
+  
+    </div>
+
+    <div key={car.id} className="w-full max-w-[1000px] mx-auto mt-44 flex flex-col items-center px-2 md:col-span-3 bg-white pt-4">
+      <div className='flex justify-between w-full'>
+         <p className='text-2xl'>{car.name}</p>
+         <Link className='bg-gray-200 px-5 py-1 rounded mb-4' to="/shop">All Cars</Link>
+      </div>
+      <div className="relative group">
+        <img src={car && car.image_url[currentIndex]} alt="name"/>
+        <div onClick={nextCar} className="absolute right-5 top-1/2 bg-gray-200 p-2 rounded-full hidden group-hover:block">
+          <BsChevronCompactRight size={30} />
+        </div>
+        <div onClick={prevCar} className="absolute left-5 top-1/2 bg-gray-200 p-2 rounded-full hidden group-hover:block">
+          <BsChevronCompactLeft size={30} />
+        </div>
+            <div className="flex justify-center mt-4">
+                {car.image_url &&
+                    car.image_url.map((imageUrl, index) => (
+                    <div key={index} className="mr-2 cursor-pointer">
+                        <img
+                        src={imageUrl}
+                        alt={`thumbnail-${index}`}
+                        onClick={() => goToNextCar(index)}
+                        className={`thumbnail ${index === currentIndex ? 'active' : ''}`}
+                        style={{ width: '200px', height: '150px', objectFit: 'cover' }}
+                        />
+                </div>
+                ))}
+            </div>
+              <Link to="/shop" className='button w-full mt-4 flex justify-center'><button >Back</button></Link>
+              <Link to="purchase" className='button w-full mt-4 flex justify-center'><button>Enquire</button></Link>
+              <div className='border-b pb-8'>
+                  <p className='extra mt-4 font-bold text-2xl'>{car.name}</p>
+                  <div className='flex justify-between mt-6'>
+                    <div className='flex'>
+                      <p className='extra'>{car.status}</p>
+                      <div>
+                        <p className='extra flex items-center'><BsClock size={18} className="mr-2"/>{car.time}</p>
+                      </div>
+                      <div>
+                        <p className='extra flex items-center'><CiLocationOn size={25} className="mr-2"/>{car.location}</p>
+                      </div>
+                    </div>
+                    <div lassName='extra flex items-center'>
+                      <p><GrView />{car.views}</p>
+                    </div>
+                  </div>
+              </div>
+              <div className='flex border-b '>
+                <div className='my-6 px-4'>
+                  <div className='rounded-full flex justify-center border-4 border-gray-400'><GiOpenPalm size={40}/></div>
+                    <p className='mt-5 text-xs md-sm lg:md'>{car.used}</p>
+                </div>
+                <div className='my-6 px-4'>
+                  <div className='rounded-full flex justify-center border-4 border-gray-400'><GiGearStickPattern size={40}/></div>
+                    <p className='mt-5 text-xs md-sm lg:md'>{car.transmission}</p>
+                </div>
+                <div className='my-6 px-4'>
+                  <div className='rounded-full flex justify-center border-4 border-gray-400'><GiClockwork size={40}/></div>
+                    <p className='mt-5 text-xs md-sm lg:md'>{car.mileage}</p>
+                </div>
+              </div>
+              <div className='grid grid-cols-2 border-b mb-2 text-xs md:text-sm lg:text-md'>
+                <div className='flex flex-col'>
+                  <div className='my-5'>
+                      <h3 className='font-semibold'>{car.model}</h3>
+                      <p className='text-gray-400'>MODEL</p>
+                  </div>
+                  <div className='my-5'>
+                      <h3 className='font-semibold'>{car.color}</h3>
+                      <p className='text-gray-400'>COLOR</p>
+                  </div>
+                  <div className='my-5'>
+                      <h3 className='font-semibold'>{car.year}</h3>
+                      <p className='text-gray-400'>YEAR</p>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                  <div className='my-5'>
+                      <h3 className='font-semibold'>{car.seats}</h3>
+                      <p className='text-gray-400'>SEATS</p>
+                  </div>
+                  <div className='my-5'>
+                      <h3 className='font-semibold'>{car.interior}</h3>
+                      <p className='text-gray-400'>INTERIOR</p>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-span-1 md:mt-56 px-3 flex flex-col text-center md:text-left bg-[var(--default)] m-2 rounded'>
+              <h1 className='text-sm lg:text-3xl pt-6 font-semibold'>Additional Details:</h1>
+            <div className=''>
+            <p className='car-details'>Price: {car.price}</p>
+              <p className='car-details'>Model: {car.name}</p>
+              <p className='car-details'>Color:{car.color}</p>
+              <p className='car-details'>Year: {car.year}</p>
+              <p className='car-details'>Seats: {car.seats}</p>
+              <p className='car-details'>Interior: {car.interior}</p>
+              <div className='px-6 py-2'>
+                <h2 className='font-bold'>Safety Tips:</h2>
+                <ul className='list-disc'>
+                  <li>Remember, don't send any pre-payments</li>
+                  <li>Meet the seller at a safe public place</li>
+                  <li>Inspect the goods to make sure they meet your needs</li>
+                  <li>Check all documentation and only pay if you're satisfied </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    </div>
+  );
+};
+
+export default Details;
