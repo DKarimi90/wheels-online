@@ -8,6 +8,8 @@ import Navbar from "./components/Navbar";
 import Oops from "./components/Oops";
 import Purchase from "./components/Purchase";
 import Shop from "./components/Shop";
+import Help from "./components/Help";
+import Footer from "./components/Footer";
 function App() {
 
   const [cars, setCars] = useState([])
@@ -39,8 +41,10 @@ function App() {
             <Route path="shop/cars/:id" element={<Details />}/>
             <Route path="shop/cars/:id/purchase" element={<Purchase />}/>
             <Route path="oops" element={<Oops />}/>
+            <Route path="help" element={<Help />}/>
           </Routes>
           <Chat />
+          <Footer />
       </Router>
     </div>
   );

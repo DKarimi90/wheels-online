@@ -13,15 +13,23 @@ function Chat() {
     let response = "";
     if (message.includes("hi") || message.includes("hey") || message.includes("hello")) {
       response = "I'm good, How can I help you?";
-    } else if (message.includes("you")) {
+    } else if (message.includes("how")) {
       response = "I'm doing well, thank you for asking.";
     } 
     else if (message.includes("contact")) {
-      response = `To contact us, click on the Contact page`;
+      response = "To contact us, click on the Contact page";
     }
-    
-    else if (message.includes("what is your name")) {
-      response = "My name is CharityAI.";
+    else if (message.includes("old")) {
+      response = "I'll let you know soon"
+    }
+    else if (message.includes("not")) {
+      response = "Sorry to hear that, please wait or contact support staff for more assistance"
+    }
+    else if (message.includes("speak?")) {
+      response = "Sure, kindly navigate to the 'Help' page and then 'Contact' section to speak to one of our staff"
+    }
+    else if (message.includes("name?")) {
+      response = "My name is CarChiefAI.";
     }  else if (message.includes("help")) {
       response = "If you need any help click on the help button on the navigation bar";
     } else {

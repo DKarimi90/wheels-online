@@ -8,14 +8,15 @@
   @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Comforter&family=Dancing+Script&family=Edu+NSW+ACT+Foundation:wght@500&family=Fasthand&family=Lato:ital,wght@0,100;0,300;0,700;0,900;1,100;1,300;1,400&family=Lora:ital@0;1&family=MonteCarlo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,400&family=Moon+Dance&family=Open+Sans:ital,wght@0,700;1,500&family=Playfair:wght@300;700;900&family=Quicksand:wght@300&family=Raleway:wght@100&family=Roboto+Mono&family=Roboto:ital,wght@0,100;1,300&family=Sassy+Frass&family=Sedgwick+Ave+Display&family=Shadows+Into+Light&display=swap');
 
 :root {
-  --default: #ffffff; 
+  --default: #ffffff;
+  --default2: #ced4da;  
   --primary: #d62828; 
   --primary2: #ffb703; 
 }
 
 @layer base {
   body {
-    @apply font-[Montserrat]
+    @apply font-[Montserrat] 
   }
   h1 {
     @apply font-[Montserrat]

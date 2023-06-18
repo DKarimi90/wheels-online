@@ -11,7 +11,7 @@ const Oops = () => {
         <div className="flex-1 min-h-full min-w-full rounded-3xl bg-white shadow-xl p-10 lg:p-20 text-gray-800 relative md:flex items-center text-center md:text-left">
           <div className="w-full md:w-1/2">
             <div className="mb-10 lg:mb-20">
-              <h1>Wheels Online not yet here!</h1>
+              <h1>Wheels Online not here yet!</h1>
             </div>
             <div className="mb-10 md:mb-20 text-gray-600 font-light">
               <h1 className="font-black uppercase text-3xl lg:text-5xl text-[var(--primary)] mb-10">Nooo, You are not lost!</h1>

@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom'
+import {BsSearch} from 'react-icons/bs'
 
 const Shop = ( {cars} ) => {
 
   return (
     <div className='w-full h-full'>
-      <div className='flex justify-center'>
-        <h1 className='pt-32 font-bold'>CURRENTLY IN STOCK</h1>
+      <div className='flex justify-center pt-32'>
+            <h1 className='font-bold text-xl md:text-2xl lg:text-4xl text-[var(--default2)]'>CURRENTLY IN STOCK</h1>
       </div>
+            <div className='flex justify-center md:justify-end pr-6 py-6 items-center'>
+                <div className='text-center border border-[var(--primary2)] flex items-center rounded-xl overflow-hidden'>
+                    <input type="search" placeholder="Search Car" className='pl-3 focus:outline-none'/>
+                    <div className='p-2 px-5 bg-[var(--primary2)] hover:cursor-pointer  hover:bg-[#ffd166]'>
+                        <BsSearch size={20}/>
+                    </div>
+                </div>
+            </div>
         <div className='pt-4 grid grid-cols-2 md:grid-cols-3 gap-4 px-3'>
             {cars && cars.map((car, index) => (
                 <div key={index} className="rounded-xl overflow-hidden relative bg-gray-300">
