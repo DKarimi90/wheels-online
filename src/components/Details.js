@@ -141,7 +141,7 @@ const Details = () => {
                   <Link><FaInstagramSquare size={40} className="text-white icons" /></Link>
                 </div>
                 <div>
-                  <Link><FaTwitterSquare size={40} className="text-blue-600 icons"/></Link>
+                  <Link><FaTwitterSquare size={40} className="text-blue-500 icons"/></Link>
                 </div>
                 <div>
                   <Link><FaWhatsappSquare size={40} className="text-green-700 icons"/></Link>

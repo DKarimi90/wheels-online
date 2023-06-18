@@ -24,10 +24,10 @@
     @apply px-2 text-xl hover:text-[var(--primary)]
   }
   .mob-links {
-    @apply px-2 text-xl py-4 border-b text-[var(--primary)]
+    @apply px-2 text-xl py-4 border-b text-[var(--primary)] hover:text-[var(--default)]
   }
   .icons {
-    @apply cursor-pointer
+    @apply cursor-pointer hover:animate-pulse
   }
   .rel-icons {
     @apply text-black
