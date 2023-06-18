@@ -44,4 +44,7 @@
   .extra {
     @apply px-2
   }
+  .group-details {
+    @apply  bg-[var(--default)] px-4 py-6 my-2
+  }
 }
