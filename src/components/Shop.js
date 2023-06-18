@@ -1,25 +1,7 @@
-import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 
-const Shop = () => {
-const [cars, setCars] = useState([])
+const Shop = ( {cars} ) => {
 
-useEffect(() => {
-    fetch('http://localhost:3005/cars')
-    .then(res => {
-        if(res.ok){
-            return res.json()
-        }
-        else {
-            throw Error("Resource not found")
-        }
-    })
-    .then(data => {
-        console.log(data)
-        setCars(data)
-    })
-    
-}, [])
   return (
     <div className='w-full h-full'>
       <div className='flex justify-center'>
