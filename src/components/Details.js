@@ -14,7 +14,7 @@ const Details = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:3005/cars/${id}`)
+    fetch(`https://wheels-hazel.vercel.app/cars/${id}`)
       .then((res) => {
         if (res.ok) {
           return res.json();

@@ -14,7 +14,7 @@ function App() {
 const [cars, setCars] = useState([])
 
   useEffect(() => {
-      fetch('http://localhost:3005/cars')
+      fetch('https://wheels-hazel.vercel.app/cars')
       .then(res => {
           if(res.ok){
               return res.json()
