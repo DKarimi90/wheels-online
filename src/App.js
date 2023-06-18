@@ -11,8 +11,7 @@ import Shop from "./components/Shop";
 import Help from "./components/Help";
 import Footer from "./components/Footer";
 function App() {
-
-  const [cars, setCars] = useState([])
+const [cars, setCars] = useState([])
 
   useEffect(() => {
       fetch('http://localhost:3005/cars')
