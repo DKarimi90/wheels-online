@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import {BsSearch} from 'react-icons/bs'
-import {AiOutlineMenu, AiOutlineClose, AiOutlineHome, AiOutlineContacts} from 'react-icons/ai'
+import {BsCarFrontFill} from 'react-icons/bs'
+import {AiOutlineMenu, AiOutlineClose, AiOutlineHome, AiOutlineContacts, AiOutlineTeam} from 'react-icons/ai'
 import {FaFacebookSquare, FaInstagramSquare, FaTwitterSquare, FaWhatsappSquare} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
@@ -30,16 +30,17 @@ useEffect(() => {
 
 
   return (
-    <div className={`w-full h-28 fixed z-10 ${scroll? "bg-black text-[var(--default)]": ''}`}>
+    <div className={`w-full h-28 fixed z-10 ${scroll? "bg-gray-900 text-[var(--default)]": ''}`}>
         <div className='w-full h-full max-w-[1200px] mx-auto px-4 flex justify-between items-center'>
             <div>
-                <h1 className={`${logo? 'hidden': 'block'} text-2xl font-bold border-b-[2px] hover:text-[var(--primary)] hover:border-[var(--primary)] border-black`}><Link to="/" onClick={() => window.scrollTo(0, 0)}>WheelsOnline</Link></h1>
+                <h1 className={`${logo? 'hidden': 'block'} text-2xl font-bold border-b-[2px] hover:text-[var(--default2)] hover:border-[var(--default2)] border-black`}><Link to="/" onClick={() => window.scrollTo(0, 0)}>WheelsOnline</Link></h1>
             </div>
             <div className='hidden md:flex items-center mr-80'>
                 <NavLink to="/" className="links" onClick={() => window.scrollTo(0, 0)}>Home</NavLink>
-                <NavLink to="Help" className="links" onClick={() => window.scrollTo(0, 0)}>Help</NavLink> 
+                <NavLink to="team" className="links" onClick={() => window.scrollTo(0, 0)}>Team</NavLink> 
+                <NavLink to="help" className="links" onClick={() => window.scrollTo(0, 0)}>Help</NavLink> 
                 <div className='ml-10'>
-                    <BsSearch />
+                    <BsCarFrontFill size={20} />
                 </div>
             </div>
             
@@ -50,6 +51,7 @@ useEffect(() => {
             <div className={`w-full h-screen bg-black absolute md:hidden top-0 left-0 flex flex-col px-4 py-10 ${nav ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-500 ease-in-out`}>
                 <h1 className='text-2xl font-bold border-b-[2px] text-[var(--primary)] hover:text-[var(--default)]'><Link to="/" onClick={handleNav}>WheelsOnline</Link></h1>
                     <NavLink to="/" onClick={handleNav} className="mob-links spread-nav">Home<AiOutlineHome className='rel-icons'/></NavLink>
+                    <NavLink to="team" onClick={handleNav} className="mob-links spread-nav">Team<AiOutlineTeam className='rel-icons'/></NavLink> 
                     <NavLink to="help" onClick={handleNav} className="mob-links spread-nav">Help<AiOutlineContacts className='rel-icons'/></NavLink> 
                 <div className='flex justify-evenly mt-8 '>
                     <div>
@@ -65,8 +67,9 @@ useEffect(() => {
                         <Link><FaWhatsappSquare size={40} className="text-green-700 icons"/></Link>
                     </div>
                 </div>
-                <div className='flex justify-center mt-9'>
-                   <button className='button'> <Link to="/shop" onClick={handleNav}>Discover</Link></button>
+                <div className='flex flex-col justify-center mt-9'>
+                   <button className='button my-5'> <Link to="/shop" onClick={handleNav}>Get Started</Link></button>
+                   <button className='button my-5'> <Link to="/oops" onClick={handleNav}>Discover</Link></button>
                 </div>
             </div> 
         </div>

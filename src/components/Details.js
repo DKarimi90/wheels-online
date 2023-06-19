@@ -171,7 +171,7 @@ const Details = () => {
                 <p className='px-2 my-3 text-center text-sm md:text-xl lg:text-sm xl:text-2xl'>Call: +254-113-312-554</p>
               </div>
               <div className='px-2 py-2 bg-white hover:bg-gray-100'>
-                <div className=" border border-[var(--primary2)] px-22 py-2"><h1 className='px-3 w-full flex justify-between font-bold text-[var(--primary2)]'>Feedback<Link to="/oops" className='font-medium'>View All</Link></h1></div>
+                <div className=" border border-[var(--primary2)] px-22 py-2"><h1 className='px-3 w-full flex justify-between font-bold text-[var(--primary2)]'>Feedback<Link to="/oops" onClick={() => window.scrollTo(0, 0)} className='font-medium'>View All</Link></h1></div>
               </div>
             </div>
           </div>

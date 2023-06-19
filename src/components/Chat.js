@@ -52,8 +52,8 @@ function Chat() {
         <div>
         <button 
             onClick={handleButtonClick}
-            className="transform hover:-translate-y-3 rounded-full duration-500 text-[var(--primary2)] hover:text-white text-2xl px-4">
-                <div className="bg-gray-900/40 border-2 p-3 rounded-full animate-bounce" title="Let's chat"><BsFillChatRightDotsFill size={30}/></div>
+            className="transform hover:-translate-y-3 rounded-full duration-500 text-green-500 hover:text-white text-2xl px-4">
+                <div className="bg-gray-900/30 border-2 p-3 rounded-full animate-bounce" title="Let's chat"><BsFillChatRightDotsFill size={30}/></div>
         </button>
         </div>
       </div>

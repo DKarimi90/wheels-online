@@ -10,8 +10,8 @@
 :root {
   --default: #ffffff;
   --default2: #ced4da;  
-  --primary: #d62828; 
-  --primary2: #ffb703; 
+  --primary: #4361ee; 
+  --primary2: #4895ef; 
 }
 
 @layer base {
@@ -22,7 +22,7 @@
     @apply font-[Montserrat]
   }
   .links {
-    @apply px-2 text-xl hover:text-[var(--primary)]
+    @apply px-2 text-xl hover:text-[var(--default2)]
   }
   .mob-links {
     @apply px-2 text-xl py-4 border-b text-[var(--primary)] hover:text-[var(--default)]
@@ -47,5 +47,11 @@
   }
   .group-details {
     @apply  bg-[var(--default)] px-4 py-6 my-2
+  }
+  .hero-images {
+    @apply w-full h-full object-cover hover:scale-105 duration-500
+  }
+  .hero-span {
+    @apply absolute bottom-1 right-1 italic font-[regular]
   }
 }

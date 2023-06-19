@@ -10,6 +10,7 @@ import Purchase from "./components/Purchase";
 import Shop from "./components/Shop";
 import Help from "./components/Help";
 import Footer from "./components/Footer";
+import Team from "./components/Team";
 function App() {
 const [cars, setCars] = useState([])
 
@@ -41,6 +42,7 @@ const [cars, setCars] = useState([])
             <Route path="shop/cars/:id/purchase" element={<Purchase />}/>
             <Route path="oops" element={<Oops />}/>
             <Route path="help" element={<Help />}/>
+            <Route path="team" element={<Team />}/>
           </Routes>
           <Chat />
           <Footer />

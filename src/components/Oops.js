@@ -11,15 +11,18 @@ const Oops = () => {
         <div className="flex-1 min-h-full min-w-full rounded-3xl bg-white shadow-xl p-10 lg:p-20 text-gray-800 relative md:flex items-center text-center md:text-left">
           <div className="w-full md:w-1/2">
             <div className="mb-10 lg:mb-20">
-              <h1>Wheels Online not here yet!</h1>
+              <h1>OOPS! Wheels Online not here yet</h1>
             </div>
             <div className="mb-10 md:mb-20 text-gray-600 font-light">
               <h1 className="font-black uppercase text-3xl lg:text-5xl text-[var(--primary)] mb-10">Nooo, You are not lost!</h1>
-              <p>Only that the page you're looking for isn't available.</p>
-              <p>But don't worry, We're right on it and will up soon, Keep checking</p>
+              <p>Only that the page you're looking for isn't available yet.</p>
+              <p>But don't worry, We're right on it and will be up soon, Keep checking</p>
             </div>
-            <div className="mb-20 md:mb-0">
+            <div className="mb-20 md:mb-0 flex flex-col">
               <Link to="/"><button className="text-lg font-light outline-none focus:outline-none transform transition-all hover:scale-110 text-[var(--primary)] hover:text-[var(--primary2)]"><i className="mdi mdi-arrow-left mr-2" />Go Back</button></Link>
+              <div className='mt-4'>
+                 <Link to="/shop" className='button text-xs lg:text-xl w-[40%]'>View Cars Instead</Link>
+              </div>
             </div>
           </div>
           <div className="w-full md:w-1/2 text-center">
