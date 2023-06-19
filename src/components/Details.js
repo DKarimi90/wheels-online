@@ -148,7 +148,7 @@ const Details = () => {
                 </div>
               </div>
               <div className='mb-4 border-b pb-4'>
-                <Link to="purchase"><button className='button' onClick={() => window.scrollTo(0, 0)}>Make an Offer</button></Link>
+                <Link to="purchase"><button className='button' onClick={() => window.scrollTo(0, 0)}>Enquire</button></Link>
               </div>
             </div>
           </div>
