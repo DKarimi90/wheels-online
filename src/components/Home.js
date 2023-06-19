@@ -50,7 +50,7 @@ const Home = () => {
       </div>
       <div className='flex flex-col w-full h-full items-center'>
       <div className='mb-16'>
-        <h2 className='uppercase font-thin text-3xl border-b pb-3'>Sample Units in the Stock</h2>
+        <h2 className='uppercase font-thin text-3xl border-b pb-3'>Sample Units in Our Stock</h2>
       </div>
       <div className='w-full h-full max-w-[1200px] mx-auto grid grid-rows-none md:grid-cols-5 gap-5 px-2 mb-24'>
         <div className='w-full h-full object-cover hover:scale-105 duration-500 col-span-2 md:col-span-3 row-span-2 relative'>
